@@ -56,7 +56,7 @@ group :development do
   gem 'rubocop', '~> 0.28.0', require: false
 end
 
-group :test do
+group :development, :test do
   gem 'cucumber-rails', :require => false
   gem 'capybara'
   gem 'launchy' # this lets us call save_and_open_page to see what's on a page for debugging capybara tests
