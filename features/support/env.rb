@@ -1,5 +1,3 @@
-require 'Capybara'
-require 'Capybara/cucumber'
 require 'rspec'
 require 'capybara/poltergeist'
 require 'cucumber/rails'
