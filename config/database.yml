@@ -20,7 +20,6 @@ development:
 test: &test
   <<: *default
   database: portfolio_test
-  username: postgres
 
 production:
   <<: *default

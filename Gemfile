@@ -8,8 +8,6 @@ gem 'dotenv-rails', '~> 1.0.2'
 # portgres database
 gem 'pg'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -47,12 +45,25 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'spring-commands-rspec'
+  gem "guard-rspec", '~> 4.5.0', require: false
+  gem 'guard-cucumber', '~> 1.5.3'
+  gem 'rb-fsevent' if `uname` =~ /Darwin/
 end
 
 group :development do
   gem 'thin', '~> 1.6.3'
-  gem "guard-rspec", '~> 4.5.0', require: false
   gem 'rubocop', '~> 0.28.0', require: false
+end
+
+group :test do
+  gem 'cucumber-rails', :require => false
+  gem 'capybara'
+  gem 'launchy' # this lets us call save_and_open_page to see what's on a page for debugging capybara tests
+  gem 'selenium-webdriver', '~> 2.43.0' # database_cleaner is not required, but highly recommended
+  gem 'poltergeist', '~> 1.5.1', require: false
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
 end
 
 group :production do
@@ -61,8 +72,3 @@ group :production do
 end
 
 
-group :test do
-   gem 'cucumber-rails', :require => false
-  # database_cleaner is not required, but highly recommended
-  gem 'database_cleaner'
-end
