@@ -48,12 +48,15 @@ Now, if you execute command
 	run just rspec
 	$ bundle exec rspec spec/
 
-	run both with guard
-	$ guard
+	to monitoring test running
+	$ bundle exec guard
+  $ bundle exec rake
 
 ===
+
 Rerefences:
 
 https://github.com/guard/guard-cucumber
 http://devblog.avdi.org/2012/08/31/configuring-database_cleaner-with-rails-rspec-capybara-and-selenium/
 http://www.railsonmaui.com/blog/2013/08/06/migrating-from-capybara-webkit-to-poltergeist-phantomjs/
+http://shashikantjagtap.net/cucumber-capybara-poltergeist-rockstar-bdd-combo/
