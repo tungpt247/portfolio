@@ -46,7 +46,35 @@
 
 	"use strict";
 
+	var _prototypeProperties = function (child, staticProps, instanceProps) { if (staticProps) Object.defineProperties(child, staticProps); if (instanceProps) Object.defineProperties(child.prototype, instanceProps); };
+
+	var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
+
 	console.log("Entry to start");
+	var Shoe = (function () {
+	  function Shoe(brand, model, size) {
+	    _classCallCheck(this, Shoe);
+
+	    this.brand = brand;
+	    this.model = model;
+	    this.size = size;
+	  }
+
+	  _prototypeProperties(Shoe, null, {
+	    toString: {
+	      value: function toString() {
+	        console.log(this.brand + this.model + this.size);
+	      },
+	      writable: true,
+	      configurable: true
+	    }
+	  });
+
+	  return Shoe;
+	})();
+
+	var shoe = new Shoe("XX", "YYY", "ZZZ");
+	shoe.toString();
 
 /***/ }
 /******/ ])

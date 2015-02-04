@@ -2,14 +2,20 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.0beta2'
 gem 'dotenv-rails', '~> 1.0.2'
 
-# portgres database
+# postgres database
 gem 'pg'
 
 # flexible authentication solution for Rails with Warden
 gem 'devise'
+
+# schedule tasks
+gem 'whenever'
+
+# priority queue system
+gem 'sidekiq'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -39,7 +45,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# markdown format
+# editor markdown frontend
 gem 'epic-editor-rails', '~> 0.2.3'
 
 group :development, :test do
@@ -56,16 +62,7 @@ group :development, :test do
   gem "guard-rspec", '~> 4.5.0', require: false
   gem 'guard-cucumber', '~> 1.5.3'
   gem 'rb-fsevent' if `uname` =~ /Darwin/
-end
 
-group :development do
-  gem 'thin', '~> 1.6.3'
-  gem 'rubocop', '~> 0.28.0', require: false
-  # export diagram models
-  gem 'rails-erd', github: 'ready4god2513/rails-erd', branch: 'rails-4.2-support-fix'
-end
-
-group :development, :test do
   gem 'cucumber-rails', :require => false
   gem 'capybara'
   gem 'launchy' # this lets us call save_and_open_page to see what's on a page for debugging capybara tests
@@ -73,6 +70,13 @@ group :development, :test do
   gem 'poltergeist', '~> 1.5.1', require: false
   gem 'database_cleaner'
   gem 'factory_girl_rails'
+end
+
+group :development do
+  gem 'thin', '~> 1.6.3'
+  gem 'rubocop', '~> 0.28.0', require: false
+  # export diagram models
+  gem 'rails-erd', github: 'ready4god2513/rails-erd', branch: 'rails-4.2-support-fix'
 end
 
 group :production do
