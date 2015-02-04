@@ -8,6 +8,9 @@ gem 'dotenv-rails', '~> 1.0.2'
 # portgres database
 gem 'pg'
 
+# flexible authentication solution for Rails with Warden
+gem 'devise'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -26,6 +29,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -34,6 +38,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# markdown format
+gem 'epic-editor-rails', '~> 0.2.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -54,6 +61,8 @@ end
 group :development do
   gem 'thin', '~> 1.6.3'
   gem 'rubocop', '~> 0.28.0', require: false
+  # export diagram models
+  gem 'rails-erd', github: 'ready4god2513/rails-erd', branch: 'rails-4.2-support-fix'
 end
 
 group :development, :test do
